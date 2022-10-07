@@ -12,7 +12,7 @@ router.post('/', async (req, res) => {
       return res.status(406).send('Invalid URL!')
     }
 
-    const urlFromDb = await UrlModel.findOne({ longUrl: longUrl })
+    const urlFromDb = await UrlModel.findOne({ longUrl: { $eq: longUrl } })
     if (urlFromDb) {
       return res.send({ shortId: urlFromDb.shortId })
     } else {
