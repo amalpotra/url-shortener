@@ -1,11 +1,8 @@
-import express from 'express'
 import { nanoid } from 'nanoid'
 import validUrl from 'valid-url'
-import UrlModel from '../models/url.js'
+import UrlModel from '../models/url.model.js'
 
-const router = express.Router()
-
-router.post('/', async (req, res) => {
+export const saveUrl = async (req, res) => {
   try {
     const { longUrl } = req.body
     if (!validUrl.isUri(longUrl)) {
@@ -24,9 +21,9 @@ router.post('/', async (req, res) => {
   } catch (error) {
     return res.status(500).send('Internal server error!')
   }
-})
+}
 
-router.get('/:id', async (req, res) => {
+export const getUrl = async (req, res) => {
   try {
     const shortId = req.params.id
     if (shortId.length != 10) {
@@ -42,10 +39,4 @@ router.get('/:id', async (req, res) => {
   } catch (error) {
     return res.status(500).send('Internal server error!')
   }
-})
-
-router.get('*', (_req, res) => {
-  res.status(404).send('You seem to be lost!')
-})
-
-export default router
+}
