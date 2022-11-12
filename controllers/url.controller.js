@@ -5,7 +5,7 @@ import UrlModel from '../models/url.model.js'
 export const saveUrl = async (req, res) => {
   try {
     const { longUrl } = req.body
-    if (!validUrl.isUri(longUrl)) {
+    if (!validUrl.isWebUri(longUrl)) {
       return res.status(406).send('Invalid URL!')
     }
 
@@ -26,7 +26,7 @@ export const saveUrl = async (req, res) => {
 export const getUrl = async (req, res) => {
   try {
     const shortId = req.params.id
-    if (shortId.length != 10) {
+    if (shortId.length !== 10) {
       return res.status(406).send('Invalid url code!')
     }
 
