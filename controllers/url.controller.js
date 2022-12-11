@@ -11,12 +11,12 @@ export const saveUrl = async (req, res) => {
 
     const urlFromDb = await UrlModel.findOne({ longUrl: { $eq: longUrl } })
     if (urlFromDb) {
-      return res.send({ shortId: urlFromDb.shortId })
+      return res.status(200).send({ shortId: urlFromDb.shortId })
     } else {
       const shortId = nanoid(10)
       await new UrlModel({ shortId: shortId, longUrl: longUrl }).save()
 
-      return res.send({ shortId: shortId })
+      return res.status(201).send({ shortId: shortId })
     }
   } catch (error) {
     return res.status(500).send('Internal server error!')
@@ -32,7 +32,7 @@ export const getUrl = async (req, res) => {
 
     const urlFromDb = await UrlModel.findOne({ shortId: shortId })
     if (urlFromDb) {
-      res.redirect(301, urlFromDb.longUrl)
+      res.redirect(urlFromDb.longUrl)
     } else {
       return res.status(404).send('Url code not found!')
     }
