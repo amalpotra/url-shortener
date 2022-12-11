@@ -1,14 +1,18 @@
 import express from 'express'
+import rateLimit from 'express-rate-limit'
 import { saveUrl, getUrl } from '../controllers/url.controller.js'
 
 const router = express.Router()
 
-router.post('/', saveUrl)
-
-router.get('/:id', getUrl)
-
-router.get('*', (_req, res) => {
-  res.status(404).send('You seem to be lost!')
+// Rate limit requests to 1 per second
+const limiter = rateLimit({
+  windowMs: 1000,
+  max: 1,
+  standardHeaders: true,
+  legacyHeaders: false,
 })
+
+router.post('/', limiter, saveUrl)
+router.get('/:id', limiter, getUrl)
 
 export default router
