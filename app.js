@@ -1,7 +1,8 @@
 import express from 'express'
 import dotenv from 'dotenv'
 import connectDB from './configs/db.config.js'
-import router from './routes/url.route.js'
+import urlRouter from './routes/url.route.js'
+import swaggerRouter from './routes/swagger.route.js'
 
 dotenv.config({ path: './configs/config.env' })
 
@@ -12,7 +13,8 @@ connectDB()
 const PORT = process.env.PORT || 5000
 
 app.use(express.json())
-app.use(process.env.BASE_URI, router)
+app.use(process.env.BASE_URI, urlRouter)
+app.use(`${process.env.BASE_URI}/docs`, swaggerRouter)
 
 app.use('*', (_req, res) => res.status(404).send('You seem to be lost!'))
 
