@@ -19,13 +19,15 @@
     </p>
 </div>
 
+<!-- ABOUT -->
+
 ## About
 
 A RESTful API for shortening long links into more manageable and useable URLs.
 For a URL, a 10 digit code is provided instead and the same is used to redirect back to the original one
-and uses MongoDB for storing the details.
+and uses MongoDB for storing details.
 
-## Made with
+### Made with
 - [Express JS](https://expressjs.com/)
 - [Mongoose](https://mongoosejs.com/)
 - [Nano ID](https://github.com/ai/nanoid)
@@ -34,17 +36,17 @@ Look `package.json` for complete set of dependencies.
 
 ### Prerequisites
 
-Before getting started, we need to make few things available.
+Before getting started, make sure you have.
 
 - Node.js along with yarn package manager. If you do not have yarn, here is the official [guide](https://yarnpkg.com/getting-started/install) for that.
 - A MongoDB connection string. (see MongoDB [Atlas](https://www.mongodb.com/atlas/database))
-- Make sure you have VS Code or any other code editor/IDE in place.
+- VS Code or any other code editor/IDE in place.
 
 ### Setup
 
-So, this is how we can set things up at you local environment.
+So, this is how to set things up at local environment.
 
-1. Clone the repo
+1. Clone the repo.
 
    ```sh
    git clone https://github.com/amalpotra/url-shortener.git
@@ -57,24 +59,22 @@ So, this is how we can set things up at you local environment.
    MONGO_URI = (your connection string)
    ```
 
-4. Open terminal and run
+4. Open terminal and run.
 
    ```sh
    yarn install
    yarn run dev
    ```
 
-5. If everything went right, service would be available at `localhost:3000`
-
-<p align="right">(<a href="#top">back to top</a>)</p>
+5. If everything went right, service would be available at `localhost:3000`.
 
 <!-- DOCUMENTATION -->
 
 ## API Documentation
 
-The complete service has been documented uisng Swagger with [OpenAPI](https://swagger.io/specification/) v3 specifications.
+All endpoints have been documented using Swagger with [OpenAPI](https://swagger.io/specification/) v3 specifications.
 
-Navigate to `http://localhost:3000/docs/api-docs` to access Swggaer UI and view deatiled documentation.
+Navigate to `http://localhost:3000/docs/api-docs` to access Swggaer UI and view detailed API doc.
 
 <!-- CONTRIBUTING -->
 
@@ -91,22 +91,18 @@ Don't forget to give the project a star! Thanks again!
 4. Push to the Branch `git push origin feature/AmazingFeature`.
 5. Open a Pull Request.
 
-<p align="right">(<a href="#top">back to top</a>)</p>
-
 <!-- LICENSE -->
 
 ## License
 
 Distributed under the GPL-v3.0 License. See `LICENSE` for more information.
 
-<p align="right">(<a href="#top">back to top</a>)</p>
-
 <!-- CONTACT -->
 
 ## Contact
 
-Amarjeet Malpotra - LinkedIn [@malpotra](https://linkedin.com/in/malpotra) - [amalpotra.github.io](https://amalpotra.github.io)
+Amarjeet Malpotra - [amalpotra.github.io](https://amalpotra.github.io)
 
-Project Link: [https://github.com/amalpotra/url-shortener](https://github.com/amalpotra/url-shortener)
+Repository link: [https://github.com/amalpotra/url-shortener](https://github.com/amalpotra/url-shortener)
 
 <p align="right">(<a href="#top">back to top</a>)</p>
