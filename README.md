@@ -42,7 +42,7 @@ Before getting started, make sure you have.
 - A MongoDB connection string. (see MongoDB [Atlas](https://www.mongodb.com/atlas/database))
 - VS Code or any other code editor/IDE in place.
 
-### Setup
+### Local setup guide
 
 So, this is how to set things up at local environment.
 
@@ -54,14 +54,15 @@ So, this is how to set things up at local environment.
 
 2. Open with VS Code and navigate to `/configs` and create a new file named `config.env` and add these properties.
    ```env
-   PORT = 3000
-   BASE_URI = (optional)
-   MONGO_URI = (your connection string)
+   PORT=3000
+   BASE_URI=(can be left blank)
+   MONGO_URI=(connection string goes here)
    ```
 
 4. Open terminal and run.
 
    ```sh
+   yarn
    yarn install
    yarn run dev
    ```
